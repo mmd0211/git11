@@ -19,7 +19,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    private static final String HOME_URL = "https://script.google.com/macros/s/AKfycbxqMGgOGbX_tegWzvM7WJ0UBDSkBlpaucC8KvO9ZMin3nLgvrDGLxaqjyj-1n-hRjB7/exec";
+    private static final String HOME_URL = "https://script.google.com/macros/s/AKfycbwOVv5KJoS53rif9aqem9Ewx3g6uWVQpuEgoj1JdRWWPoY6se6Y01iCGjzeB84y5W3y/exec";
 
     private WebView webView;
     private ProgressBar progressBar;
@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
         settings.setMediaPlaybackRequiresUserGesture(false);
         settings.setBuiltInZoomControls(false);
         settings.setDisplayZoomControls(false);
-        settings.setUserAgentString(settings.getUserAgentString() + " SigmaPlanner/1.0");
+        settings.setUserAgentString(settings.getUserAgentString() + " SigmaClassPlanner/1.0");
 
         CookieManager cookies = CookieManager.getInstance();
         cookies.setAcceptCookie(true);
@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
                 if (request.isForMainFrame()) {
-                    Toast.makeText(MainActivity.this, "اتصال به Sigma Planner برقرار نشد.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "اتصال به Sigma Class Planner برقرار نشد.", Toast.LENGTH_LONG).show();
                 }
             }
 
