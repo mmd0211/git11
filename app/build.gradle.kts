@@ -7,7 +7,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "ir.sigmarobotic.sigmaplanner"
+        applicationId = "ir.sigmarobotic.sigmaclassplanner"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
