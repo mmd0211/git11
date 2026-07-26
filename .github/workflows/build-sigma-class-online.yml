@@ -1,0 +1,47 @@
+name: Build Sigma Class Planner Online APK
+
+on:
+  push:
+    branches: [ "sigma-class-planner-online" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sigma-class-planner-online
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android SDK 35
+        run: yes | sdkmanager "platforms;android-35" "build-tools;35.0.0"
+
+      - name: Install Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build APK
+        run: gradle assembleDebug --no-daemon
+
+      - name: Prepare APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk SigmaClassPlannerOnline.apk
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: SigmaClassPlannerOnline-APK
+          path: sigma-class-planner-online/SigmaClassPlannerOnline.apk
