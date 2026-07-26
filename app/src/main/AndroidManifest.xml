@@ -7,7 +7,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_sigma_app"
         android:roundIcon="@drawable/ic_sigma_app"
-        android:label="Sigma Planner"
+        android:label="Sigma Class Planner"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.Material.Light.NoActionBar"
         android:usesCleartextTraffic="false">
