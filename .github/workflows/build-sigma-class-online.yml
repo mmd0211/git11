@@ -3,6 +3,8 @@ name: Build Sigma Class Planner Online APK
 on:
   push:
     branches: [ "sigma-class-planner-online" ]
+  pull_request:
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
